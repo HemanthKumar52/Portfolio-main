@@ -40,10 +40,10 @@ const Contact = () => {
     // EmailJS logic - User must input their own keys
     emailjs
       .sendForm(
-        "service_8x6r2xf", 
-        "template_ffk64mi", 
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, 
         formRef.current,
-        "QvtkJSMZNCxcMHv8l" 
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY 
       )
       .then(
         (result) => {
