@@ -1,0 +1,15 @@
+{
+  "name": "Hemanth Kumar Portfolio",
+  "short_name": "HK Portfolio",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#131424",
+  "theme_color": "#f13024",
+  "icons": [
+    {
+      "src": "/avatar.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

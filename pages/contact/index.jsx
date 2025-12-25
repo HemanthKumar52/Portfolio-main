@@ -21,6 +21,14 @@ const Contact = () => {
     const email = formData.get("email");
     const subject = formData.get("subject");
     const message = formData.get("message");
+    const honeypot = formData.get("_honey");
+
+    // Honeypot check
+    if (honeypot) {
+      setIsLoading(false);
+      toast.success("Message sent successfully!");
+      return;
+    }
 
     // Validation
     if (!name || !email || !subject || !message) {
@@ -29,21 +37,33 @@ const Contact = () => {
       return;
     }
 
-    // Email format verification
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // Strict Email Validation
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(email)) {
       toast.error("Please enter a valid email address.");
       setIsLoading(false);
       return;
     }
 
-    // EmailJS logic - User must input their own keys
+    // Block using the owner's email as sender
+    if (email.toLowerCase().trim() === "hemanthkumar215hk@gmail.com") {
+      toast.error("Please enter your own email address, not mine.");
+      setIsLoading(false);
+      return;
+    }
+
+    // EmailJS logic - Using Hardcoded keys to ensure it works like the Home page if envs are missing
+    // Otherwise fallback to envs
+    const serviceId = "service_8x6r2xf" || process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+    const templateId = "template_ffk64mi" || process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+    const publicKey = "QvtkJSMZNCxcMHv8l" || process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+
     emailjs
       .sendForm(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID, 
+        serviceId,
+        templateId, 
         formRef.current,
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY 
+        publicKey 
       )
       .then(
         (result) => {
@@ -149,6 +169,9 @@ const Contact = () => {
               required
               aria-required
             />
+            
+            {/* Honeypot field (hidden from users) */}
+            <input type="text" name="_honey" style={{ display: 'none' }} tabIndex="-1" autoComplete="off" />
             <button
               type="submit"
               className="btn rounded-full border border-white/50 max-w-[170px] px-8 transition-all duration-300 flex items-center justify-center overflow-hidden hover:border-accent group"

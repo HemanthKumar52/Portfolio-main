@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://hemanthkumarportfolio.vercel.app/sitemap.xml

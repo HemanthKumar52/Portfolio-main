@@ -20,7 +20,7 @@
 
 @layer base {
   body {
-    @apply bg-secondary overflow-hidden leading-relaxed;
+    @apply bg-secondary overflow-y-scroll md:overflow-hidden leading-relaxed;
   }
   .page {
     @apply w-full min-h-screen overflow-x-hidden;

@@ -138,7 +138,7 @@ const Home = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     setIsLoading(true);
 
@@ -147,6 +147,15 @@ const Home = () => {
     const email = formData.get("email");
     const subject = formData.get("subject");
     const message = formData.get("message");
+    const honeypot = formData.get("_honey");
+
+    // Honeypot check (Anti-spam)
+    if (honeypot) {
+      setIsLoading(false);
+      // Silently fail for bots
+      toast.success("Message sent successfully!"); 
+      return; 
+    }
 
     if (!name || !email || !subject || !message) {
       toast.error("Please fill in all fields.");
@@ -154,9 +163,17 @@ const Home = () => {
       return;
     }
 
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    // Strict Email Validation
+    const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(email)) {
       toast.error("Please enter a valid email address.");
+      setIsLoading(false);
+      return;
+    }
+
+    // Block using the owner's email as sender
+    if (email.toLowerCase().trim() === "hemanthkumar215hk@gmail.com") {
+      toast.error("Please enter your own email address, not mine.");
       setIsLoading(false);
       return;
     }
@@ -585,6 +602,9 @@ const Home = () => {
                 className="textarea"
                 disabled={isLoading}
               />
+              
+              {/* Honeypot field (hidden from users) */}
+              <input type="text" name="_honey" style={{ display: 'none' }} tabIndex="-1" autoComplete="off" />
 
               <button
                 type="submit"

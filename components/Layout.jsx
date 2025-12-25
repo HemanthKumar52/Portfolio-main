@@ -45,18 +45,68 @@ const Layout = ({ children }) => {
 
       {/* metadata */}
       <Head>
-        <title>Hemanth Kumar | Portfolio</title>
+        <title>Hemanth Kumar | Full Stack Developer & Cybersecurity Enthusiast</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta
           name="description"
-          content="Hemanth Kumar is a Full-stack web developer with 1+ years of experience."
+          content="Hemanth Kumar (HK) is a Full-stack Developer and Cybersecurity Enthusiast specializing in MERN, Flutter, and IoT solutions. Explore my portfolio."
         />
         <meta
           name="keywords"
-          content="react, next, nextjs, html, css, javascript, js, modern-ui, modern-ux, portfolio, framer-motion, 3d-website, particle-effect"
+          content="Hemanth Kumar, HK, Hemanth Kumar Portfolio, Full Stack Developer, Cybersecurity, Flutter Developer, IoT, MERN Stack, React Developer"
         />
         <meta name="author" content="Hemanth Kumar" />
         <meta name="theme-color" content="#f13024" />
+        
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://hemanthkumarportfolio.vercel.app/" />
+        <meta property="og:title" content="Hemanth Kumar | Full Stack Developer & Cybersecurity Enthusiast" />
+        <meta property="og:description" content="Hemanth Kumar (HK) is a Full-stack Developer and Cybersecurity Enthusiast. View my projects and skills." />
+        <meta property="og:image" content="https://hemanthkumarportfolio.vercel.app/social-preview.jpg" />
+
+        {/* Twitter */}
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta property="twitter:url" content="https://hemanthkumarportfolio.vercel.app/" />
+        <meta property="twitter:title" content="Hemanth Kumar | Full Stack Developer" />
+        <meta property="twitter:description" content="Portfolio of Hemanth Kumar - Full Stack Developer, Cybersecurity Researcher, and IoT Enthusiast." />
+        <meta property="twitter:image" content="https://hemanthkumarportfolio.vercel.app/social-preview.jpg" />
+        
+        {/* Canonical */}
+        <link rel="canonical" href="https://hemanthkumarportfolio.vercel.app/" />
+        
+        {/* Favicon & Manifest */}
+        <link rel="icon" href="/avatar.png" />
+        <link rel="manifest" href="/manifest.json" />
+
+        {/* JSON-LD Structured Data */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Hemanth Kumar",
+              "alternateName": "HK",
+              "url": "https://hemanthkumarportfolio.vercel.app/",
+              "jobTitle": "Full Stack Developer",
+              "sameAs": [
+                "https://github.com/HemanthKumar52",
+                "https://www.linkedin.com/in/hemanthkumar52/",
+                "https://www.instagram.com/_hkxzz_",
+                "https://facebook.com" 
+              ],
+              "knowsAbout": [
+                "Full Stack Development",
+                "Cybersecurity", 
+                "IoT",
+                "Machine Learning",
+                "Flutter",
+                "MERN Stack"
+              ]
+            }),
+          }}
+        />
       </Head>
 
       {/* Particles */}
