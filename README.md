@@ -103,9 +103,9 @@ SOFTWARE.
 
 **Hemanth Kumar**
 
-- Website: [Your Portfolio Link]
-- GitHub: [github.com/sanidhyy](https://github.com)
-- LinkedIn: [linkedin.com/in/yourprofile](https://linkedin.com)
+- Website: https://hemanthkumarportfolio.vercel.app/
+- GitHub: https://github.com/HemanthKumar52/Portfolio-main
+- LinkedIn: https://www.linkedin.com/in/hemanthkumar52/
 
 ---
 
