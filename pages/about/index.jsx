@@ -36,7 +36,7 @@ import {
 } from "react-icons/si";
 
 import Avatar from "../../components/Avatar";
-import Circles from "../../components/Circles";
+
 import LogoLoop from "../../components/LogoLoop";
 import { fadeIn } from "../../variants";
 
@@ -133,7 +133,7 @@ const About = () => {
 
   return (
     <div className="h-full bg-primary/30 py-0 text-center xl:text-left flex items-center justify-center">
-      <Circles />
+
 
       {/* avatar img */}
       <motion.div

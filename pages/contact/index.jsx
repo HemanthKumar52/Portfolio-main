@@ -6,7 +6,7 @@ import { useState, useRef } from "react";
 import toast from "react-hot-toast";
 import confetti from "canvas-confetti";
 import Socials from "../../components/Socials";
-import Circles from "../../components/Circles";
+
 
 const Contact = () => {
   const formRef = useRef();
@@ -69,7 +69,7 @@ const Contact = () => {
 
   return (
     <div className="h-full bg-primary/30">
-      <Circles />
+
       <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
         {/* text & form */}
         <div className="flex flex-col w-full max-w-[700px]">
