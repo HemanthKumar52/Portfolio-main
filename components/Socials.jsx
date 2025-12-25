@@ -5,28 +5,34 @@ import {
   RiFacebookLine,
   RiGithubLine,
   RiLinkedinLine,
+  RiDiscordLine,
 } from "react-icons/ri";
 
 export const socialData = [
   {
     name: "Instagram",
-    link: "https://instagram.com",
+    link: "https://www.instagram.com/_hkxzz_?utm_source=qr",
     Icon: RiInstagramLine,
   },
   {
     name: "Facebook",
-    link: "https://facebook.com",
+    link: "https://www.facebook.com/venkatesan.hemanth?mibextid=ZbWKwL",
     Icon: RiFacebookLine,
   },
   {
     name: "Linkedin",
-    link: "https://linkedin.com",
+    link: "https://www.linkedin.com/in/hemanthkumar52/",
     Icon: RiLinkedinLine,
   },
   {
     name: "Github",
-    link: "https://github.com",
+    link: "https://github.com/hemanthkumar52",
     Icon: RiGithubLine,
+  },
+  {
+    name: "Discord",
+    link: "https://discordapp.com/users/1222111425569357857",
+    Icon: RiDiscordLine,
   },
 ];
 

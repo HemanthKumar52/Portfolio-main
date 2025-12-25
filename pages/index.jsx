@@ -40,7 +40,7 @@ import {
 
 import ProjectsBtn from "../components/ProjectsBtn";
 import Avatar from "../components/Avatar";
-import Circles from "../components/Circles";
+
 import ParticlesContainer from "../components/ParticlesContainer";
 
 import Bulb from "../components/Bulb";
@@ -273,7 +273,7 @@ const Home = () => {
 
       {/* ABOUT SECTION */}
       <section id="about" className="min-h-screen py-32 text-center xl:text-left relative">
-        <Circles />
+
 
         {/* avatar img */}
         <motion.div
@@ -399,7 +399,7 @@ const Home = () => {
 
       {/* EXPERIENCE SECTION */}
       <section id="experience" className="min-h-screen py-36 flex items-center relative">
-        <Circles />
+
         <div className="container mx-auto">
            <motion.h2
               variants={fadeIn("up", 0.2)}
@@ -431,7 +431,7 @@ const Home = () => {
 
       {/* SERVICES SECTION */}
       <section id="services" className="min-h-screen py-36 flex items-center relative">
-        <Circles />
+
         <div className="container mx-auto">
           <div className="flex flex-col xl:flex-row gap-x-8">
             {/* text */}
@@ -475,7 +475,7 @@ const Home = () => {
 
       {/* WORK SECTION */}
       <section id="work" className="min-h-screen py-36 flex items-center relative">
-        <Circles />
+
         <div className="container mx-auto">
           <div className="flex flex-col xl:flex-row gap-x-8">
             {/* text */}
@@ -519,7 +519,7 @@ const Home = () => {
 
       {/* CONTACT SECTION */}
       <section id="contact" className="min-h-screen relative">
-        <Circles />
+
         <div className="container mx-auto py-32 text-center xl:text-left flex items-center justify-center h-full">
           {/* text & form */}
           <div className="flex flex-col w-full max-w-[700px]">
